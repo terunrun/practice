@@ -1,0 +1,56 @@
+@charset "utf-8";
+body {
+  background: #ccc;
+  font-size: 16px;
+  font-family: Verdana, sans-serif;
+}
+
+.container {
+  width: 400px;
+  margin: 30px auto;
+}
+
+textarea {
+  width: 400px;
+  box-sizing: border-box;
+  height: 200px;
+  padding: 14px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+textarea:focus {
+  outline: none; /* フォーカスしたときに枠を表示しない  */
+}
+
+p {
+  color: #333;
+  font-size: 14px;
+  float: left;
+  margin: 0px;
+  padding-top: 8px;
+}
+
+#label {
+  font-weight: bold;
+}
+
+.btn {
+  display: inlini-block;
+  width: 150px;
+  background-color: #00aaff;
+  padding: 5px;
+  color: #fff;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 4px #0088cc;
+  float:right;
+}
+
+.warning {
+  color: #fff;
+}

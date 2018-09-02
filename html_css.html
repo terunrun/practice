@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="jp" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>HTMLの練習</title>
+    <!-- favicon指定 -->
+    <link rel="icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="css/main.css">
+    <!-- HTML文書の説明文 -->
+    <meta name="description" content="てるんるんのポートフォリオサイトです。"
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul> <!-- Unordered List(ul) -->
+          <!-- target=_"blank"で別タブでリンクを開く -->
+          <li class="current"><a href="html_css.html">HOME</a></li>
+          <li ><a href="html_css_2.html">自己紹介</a></li>
+          <li><a href="password_generater.html">パスワード作成アプリ</a></li>
+          <li><a href="#footer">一番下へ</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section>
+      <img src="img/taro.png" alt="自分の画像" class="icon">
+      <h1>てるんるん</h1>
+      <p>プログラミングを学習中</p>
+
+      <div class="works">
+        <section>
+          <img src="img/work1.png" alt="勇者ゲーム" style="width:400px;height:260px;">
+          <!-- sectionタグで区切るごとにh1は相対的な大きさに調整される。 -->
+          <h1>勇者ゲーム</h1>
+          <p>王道RPG王道RPG<br> <!-- break 改行-->
+            王道RPG王道RPG<strong>王道RPG</strong></P>
+          <blockquote>blockquote 字下げ</blockquote>
+        </section>
+
+        <section>
+          <img src="img/work2.png" alt="宝探しゲーム" style="width:400px;height:260px;">
+          <h1>宝探しゲーム</h1>
+          <p>宝探しゲーム宝探しゲーム宝探しゲーム宝探しゲーム宝探しゲーム</P>
+        </section>
+
+        <section>
+          <img src="img/work3.png" alt="神経衰弱" style="width:400px;height:260px;">
+          <h1>神経衰弱</h1>
+          <p>神経衰弱神経衰弱神経衰弱神経衰弱神経衰弱</P>
+        </section>
+      </section>
+
+      <footer id="footer">
+        <ul>
+          <li>
+            <!-- hrefにmailtoを含めると、ブラウザがメーラーを開く -->
+            <a href="mailto:terunrun@gmail.com" target="_blank">
+              <img src="img/mail.png" alt="メール" style="width:20px;height:20px;">
+            </a>
+          </li>
+          <li>
+            <a href="http://localhost:3000" target="_blank">
+              <img src="img/blog.png" alt="ブログ" style="width:20px;height:20px;">
+            </a>
+          </li>
+          <li>
+            <img src="img/photos.png" alt="カメラ" style="width:20px;height:20px;">
+          </li>
+        </ul>
+        <p>(c)copyright Terunrun.com</p>
+      </footer>
+      <p><a href="#top">一番上へ</a></p> <!-- topはid指定しなくても使える -->
+    </div>
+  </body>
+</html>

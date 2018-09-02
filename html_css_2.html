@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="jp" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>HTMLの練習</title>
+    <!-- favicon指定 -->
+    <link rel="icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/main_2.css">
+    <meta name="description" content="てるんるんのポートフォリオサイトです。"
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul> <!-- Unordered List(ul) -->
+          <!-- target=_"blank"で別タブでリンクを開く -->
+          <li><a href="html_css.html">HOME</a></li>
+          <li class="current"><a href="html_css_2.html">自己紹介</a></li>
+          <li><a href="password_generater.html">パスワード作成アプリ</a></li>
+          <li><a href="#footer">一番下へ</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section>
+      <img src="img/taro.png" alt="自分の画像" class="icon">
+      <h1>てるんるん</h1>
+      <p>プログラミングを学習中</p>
+      <dl> <!-- description list -->
+        <dt>Ruby</dt> <!-- description Term -->
+        <dd>Railsを使ってアプリケーションを構築中</dd> <!-- description Detail -->
+        <dt>OS</dt>
+        <dd>Windows上にUbuntuを構築中</dd>
+      </dl>
+
+      <ol reversed start="5"> <!-- reverse属性で逆に start属性で開始番号を指定-->
+        <li>肉</li>
+        <li>魚</li>
+        <li>野菜</li>
+      </ol>
+
+      <ul>
+        <li>肉</li>
+        <li>魚</li>
+        <li>野菜</li>
+      </ul>
+
+      <table>
+        <thead>
+          <tr> <!--table row -->
+            <th>年</th> <!--table header cell -->
+            <th>出来事</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1986</td> <!--table data cell -->
+            <td>誕生</td>
+          </tr>
+          <tr>
+            <td>2011</td>
+            <td>TIS入社</td>
+          </tr>
+          <tr>
+            <td>2018</td>
+            <td>第一子たくと誕生</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>お問い合わせ</h2>
+      <form>
+        <p>
+          <!-- <label>お名前<input type="name"></label> --> <!-- labelタグで囲うことで関連付け、ラベルをクリックすると入力欄にフォーカスされる -->
+          <label for="name">お名前</label> <!-- for属性でidを指定して関連付け -->
+          <input type="name" id="name" value="名前を入力">
+          <input type="name" id="name" placeholder="名前を入力">
+        </p>
+        <p>
+          <label for="message">お問い合わせ内容</label>
+          <textarea id="message">お問い合わせ内容を入力</textarea>
+          <textarea id="message" placeholder="お問い合わせ内容を入力"></textarea>
+        </p>
+        <p>
+          <label for="pwd">パスワード</label>
+          <input type"password" id="pwd">
+        </P>
+        <p>
+          <label for="content">お問い合わせ種別</label>
+          <select id="content" size="3" multiple> <!-- multiple属性で複数選択を可能とする -->
+            <option value="1">てるんるんについて</option>
+            <option value="2" selected>このサイトについて</option> <!-- selected属性で初期値を指定 -->
+            <option value="3">言語学習について</option>
+            <option value="4">その他</option>
+          </select>
+        </p>
+        <p>
+          <fieldset>
+            <legend>性別</legend>
+            <input type="radio" id="men" name="sex"><label for="men">男</label> <!-- 同じname属性を設定することで複数選択を不可とする -->
+            <input type="radio" id="women"  name="sex" checked><label for="women">女</label> <!-- 同じname属性を設定することで複数選択を不可とする -->
+          </fieldset>
+        </p>
+        <p>
+          <fieldset>
+            <legend>お住まい</legend>
+            <input type="checkbox" id="tohoku"><label for="tohoku">北海道・東北</label>
+            <input type="checkbox" id="kanto" checked><label for="kanto">関東</label> <!-- checked属性で初期値を指定 -->
+            <input type="checkbox" id="chubu"><label for="chubu">中部</label>
+          </fieldset>
+        </p>
+        <button>送信</button>
+        <input type="submit"> <!-- valueを指定しないと「送信」となる -->
+      </form>
+    </section>
+
+    <pre> <!-- preformatted 字下げなどをそのまま表示 -->
+function a() {
+  console.log("これはjavascriptの関数の記載方法です")
+};
+    </pre>
+
+    <hr> <!-- horizontal rule 水平線 -->
+
+    <section>
+      <h1>最近の記事</h1>
+      <article>
+        <h1>サイト開設</h1>
+        <p>てるんるんのサイトがオープンしました</p>
+        <footer>
+          <p>投稿日：<time>2018-8-31</time></p>
+        </footer>
+      </article>
+    </section>
+
+    <section>
+      <aside>
+        <h1>広告を表示</h1>
+        <p>アフィリエイトバナー</p>
+      </aside>
+    </section>
+
+    <hr> <!-- horizontal rule 水平線 -->
+
+    <p class="va">Styleの学習<img src="img/mail.png"></p>
+
+    <div class="box1">
+      box1
+      <div class="box2">
+        box2 HelloHelloHelloHelloHelloHelloHelloHelloHello
+      </div>
+    </div>
+    <div class="box3">box3</div>
+    <div class="box3">box3</div>
+    <div class="box3">box3</div>
+    <div class="box box4">
+      <div class="box-a mini">a</div>
+      <div class="box-b mini">b</div>
+      <div class="box-c mini">c</div>
+    </div>
+    <div class="box box5">box5</div>
+    <div class="box box6">box6</div>
+
+    <ul>
+      <li><a href="http://google.com">google</a></li>
+      <li><a href="http://yahoo.co.jp">yahoo</a></li>
+      <li><a href="http://localhost:3000">Juchu</a></li>
+    </ul>
+
+    <section class="giji">
+      <h1 data-subtitle="-main title">疑似要素</h1>
+      <p>説明説明説明説明説明説明</p>
+    </section>
+
+    <div id="gijiclass">疑似クラス</div>
+
+    <div id="nthchild">
+      <p>nth-child</p>
+      <p>nth-child</p>
+      <p>nth-child</p>
+      <p>nth-child</p>
+      <p>nth-child</p>
+      <p>nth-child</p>
+      <p>nth-child</p>
+    </div>
+
+    <div id="nthoftype">
+      <h1>nth-of-type</h1>
+      <p>nth-of-type</p>
+      <h1>nth-of-type</h1>
+      <p>nth-of-type</p>
+      <p>nth-of-type</p>
+    </div>
+
+    <section id="syosaido">
+      <h1 id="syousaido_h1" class="syousaido_h1">詳細度</h1>
+    </section>
+
+    <div id="float">
+      <h1>Float</h1>
+      <p><img src="img/taro.png">Floatについて</p>
+      <h2>Float</h2>
+      <p>Floatについて</p>
+    </div>
+
+    <hr> <!-- horizontal rule 水平線 -->
+    <footer id="footer">
+      <ul>
+        <li>
+          <!-- hrefにmailtoを含めると、ブラウザがメーラーを開く -->
+          <a href="mailto:terunrun@gmail.com" target="_blank">
+            <img src="img/mail.png" alt="メール" style="width:20px;height:20px;">
+          </a>
+        </li>
+        <li>
+          <a href="http://localhost:3000" target="_blank">
+            <img src="img/blog.png" alt="ブログ" style="width:20px;height:20px;">
+          </a>
+        </li>
+        <li>
+          <img src="img/photos.png" alt="カメラ" style="width:20px;height:20px;">
+        </li>
+      </ul>
+      <p>&copy; copyright Terunrun.com</p> <!-- 実体参照でコピーライトの(c)を表示 -->
+    </footer>
+
+    <p><a href="#top">一番上へ</a></p> <!-- topはid指定しなくても使える -->
+
+  </body>
+</html>

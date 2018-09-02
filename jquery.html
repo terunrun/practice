@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="jp" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>JQueryの練習</title>
+    <link rel="stylesheet" href="css/jquery.css">
+  </head>
+  <body>
+    <p id="midashi">JQueryの練習</p>
+    <ul id="main">
+      <li>0</li>
+      <li class="item">1</li>
+      <li>2</li>
+      <li>
+        3
+        <ul id="sub">
+          <li class="item">3-0</li>
+          <li class="item">3-1</li>
+          <li>3-2</li>
+          <li class="item">3-3</li>
+          <li>3-4</li>
+        </ul>
+      </li>
+    </ul>
+
+<!--
+    <div>
+      <p><a href="http://www.google.com">google</p>
+      <p><a href="http://www.yahoo.co.jp" data-sitename="yahooJapan">yahoo</p>
+      <p><a href="http://localhost:3000">Juchu</p>
+    </div>
+-->
+
+    <div id="box"></div>
+
+    <input type="text" id="name">
+    <select id="members">
+      <option value="yusuke">yusuke</option>
+      <option value="honami">honami</option>
+    </select>
+
+    <div id="button" style="margin-top: 10px;width: 50px;border:1px solid #000;text-align: center;">add</div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+      // $(document).ready(function() {
+      $(function() { //1行上の省略形
+        //セレクタ：処理対象のDOM要素を指定、以下のp
+        //メソッド：セレクタに対して行う処置、以下の.以下、つなげて書くことをメソッドチェーン
+        //$("p").css("color", "red").hide("slow");
+
+        //セレクタ
+          // %("")でセレクタを指定
+          // HTML要素はそのまま記載
+          // id、classの指定はcssと同じ
+          // classへのメソッドが優先される？
+          //$("#sub").css("color", "red");
+
+          // > ：直下の子要素
+          //   ：それ以下の要素
+          // , ：複数の要素
+          // + ：隣接する要素
+          //$("#main > .item").css("color", "blue");
+          //$("#main  .item").css("color", "blue");
+          //$("#main, #sub").css("color", "blue");
+          //$(".item + .item").css("color", "blue");
+
+          // フィルタ
+          // :eq() :gt() :lt() :even :odd :contents() :first :last
+          // $("#sub > li:eq(2)").css("color", "red"); //id:subの子要素のliの2番目（liは0から始まる）
+
+          // メソッドを使ったDIM要素の指定
+          // parent(), children() 親子要素
+          // $("#sub").parent().css("color", "red");
+          // next(), prev() 前後要素
+          // $("#sub > li:eq(2)").next().css("color", "red");
+          // siblings() 兄弟要素
+          // $("#sub > li:eq(2)").siblings().css("color", "red");
+
+          // 属性セレクタ
+          // =　：完全一致
+          // != ：一致しない
+          // *= ：部分一致
+          // ^= ：前方一致
+          // $= ：後方一致
+          // $('a[href="google"]').css("background-color", "red");
+          // $('a[href!="google"]').css("background-color", "red");
+          // $('a[href*="google"]').css("background-color", "red");
+          // $('a[href^="http"]').css("background-color", "blue");
+          // $('a[href$="0"]').css("background-color", "black");
+
+        //メソッド
+
+          // css：cssの設定、取得
+          // $('p').css("color", "red");
+          // console.log($('p').css("color", "red"));
+
+          // addClass, removeClass
+          // $('p').addClass("myClass");
+
+          // attr
+          // console.log($('a').attr("href"));
+          // $('a').attr("href", "http://ww500ahoo.co.jp")
+          // console.log($('a').attrshowh"50));
+          // $('a').attr("href", "http://ww500ahoo.co.jp")
+          // console.log($('a').attrshowh"50));
+
+          // data
+          // console.log($('a').data("sitename"));
+          // $('a').attr("data", "GoogleJapan")
+          // console.log($('a').data("sitename"));
+
+          // タグの中身を操作
+          // text   ：textを取得、変更
+          // html   ：htmlを取得、変更
+          // val    ：value値を取得、変更
+          // remove ：要素を消す
+          // empty  ：中身を空にする
+          // console.log($('#midashi').text());
+          // $('#midashi').text("書き換え");
+          // console.log($('#midashi').text());
+          // $('#midashi').html('<a href="http://www.google.com">リンクに変更');
+          // console.log($('#midashi').html());
+          // $('#midashi').empty();
+          // console.log($('#midashi').text());
+          // $('#midashi').remove();
+          // console.log($('#midashi').text());
+
+          //要素の追加
+          // before, after => insertBefore, insertAfter　：前後に追加
+          // prepend, append => prependTo, appendTo ：先頭、末尾に追加
+          // var li = $('<li>').text("added");
+          // $('#sub > li:eq(2)').before(li);
+          // li.insertBefore($('#main > li:eq(2)'));
+          // $('#sub').append(li);
+
+          //エフェクト
+          // hide, show ：一機に消す、出す
+          // fadeOut, fadeIn　：ふわっと消す、出す
+          // toggle　：出ていれば消す、消えていれば出す
+          // $('#box').hide(500);
+          // $('#box').show(0);
+          // $('#box').fadeOut(500);
+          // $('#box').fadeIn(500);
+          // $('#box').toggle(500);
+          // $('#box').toggle(500, function() {
+          //   alert("エフェクトが実行された")
+          // }); //完了後に実行されるコールバック関数を指定可能
+
+          // イベント
+          // click
+          // mouseover, mouseout, mousemove
+          $('#box').click(function () {
+            alert("クリックされました")
+          });
+          $('#box')
+            .mouseover(function() {
+              $(this).css("background-color", "blue")
+            })
+            .mouseout(function() {
+              $(this).css("background-color", "red")
+            })
+            .mousemove(function(e) { // イベントオブジェクトeでイベントの状態を取得
+              $(this).text(e.pageX) // イベントオブジェクトeにはAPIで様々な関数が用意されている
+            });
+
+            // フォームに関するイベント
+            // focus, blur ：要素にフォーカスが当たる・外れるときに実行
+            // change ：要素の値が変わったときに実行
+            $('#name')
+              .focus(function() {
+                $(this).css("background-color", "yellow")
+              })
+              .blur(function() {
+                $(this).css("background-color", "")
+              });
+            $('#members').change(function() {
+              alert("changed")
+            });
+
+            // 動的に作られた要素に対するイベント
+            // on ：//動的に追加された要素の親要素に対してイベント・操作設定・処理を指定
+            $('#button').click(function() {
+              var p = $("<p>").text("added").addClass("added")
+              $(this).before(p)
+            });
+
+            $('body').on("click", ".added", function() {
+              $('.added').remove();
+            })
+
+            // Ajax ：Asyncronus Javascript + XML
+
+
+      });
+    </script>
+  </body>
+</html>

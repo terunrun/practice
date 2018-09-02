@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="jp" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>JQueryの練習</title>
+    <link rel="stylesheet" href="../../assets/stylesheets/jquery.css">
+  </head>
+  <body>
+    <p id="midashi">Ajaxの練習</p>
+    <button>Ajaxで表示</button>
+    <div id="result"></div>
+
+    <p>
+      <input type="text" name="name" id="name">
+      <input type="button" value="Greet!" id="greet">
+    </p>
+    <div id="result_2"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+      $(function() {
+
+        // ボタン押下時に別HTMLを表示する(load)
+        $('button').click(function() {
+          $('#result').load("more.html", function() {
+            $('#message').css("color", "red"); //loadメソッドが完了してから処理を実行するコールバック関数として定義
+          });
+        });
+
+        // $.get, $.post
+        $('#greet').click(function() {
+          $.get('greet.rb', { //渡す先
+            name: $('#name').val() //渡す値
+          }, function(data) { //コールバック関数、引数でgreet.rbの結果を取得
+            $('#result_2').html(data.message + "(" + data.length + ")");
+          });
+        });
+
+      });
+    </script>
+  </body>
+</html>

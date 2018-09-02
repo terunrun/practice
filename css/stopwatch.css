@@ -1,0 +1,45 @@
+@charset "utf-8";
+body {
+  font-family: "Courier New", sans-serif;
+  font-size: 14px;
+  background-color: #eee;
+}
+
+.container {
+  width: 270px;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 15px;
+  text-align: center;
+}
+
+#result {
+  background-color: #ddd;
+  height: 120px;
+  line-height: 120px;
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.buttons {
+  overflow: hidden;
+}
+
+.btn {
+  cursor: pointer;
+  font-weight: bold;
+  width: 80px;
+  background-color: #ddd;
+  height: 45px;
+  line-height: 45px;
+  float: left;
+  user-select: none;
+}
+
+.btn + .btn {
+  margin-left: 15px;
+}
+
+.disable {
+  opacity: 0.5;
+}

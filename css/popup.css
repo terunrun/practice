@@ -1,0 +1,155 @@
+@charset "UTF-8";
+body {
+  padding: 0 10px 40px;
+}
+
+h2 {
+  font-size: 16px;
+}
+
+.ex1 {
+  width: 100px;
+  height: 100px;
+  background-color: #eee;
+}
+
+.ex2 {
+  width: 100px;
+  height: 100px;
+  background-color: #eee;
+  border-style: solid;
+  border-width: 20px;
+  border-color: red blue pink green;
+}
+
+.ex3 {
+  width: 0;
+  height: 0;
+  background-color: #eee;
+  border-style: solid;
+  border-width: 20px;
+  border-color: red blue pink green;
+}
+
+.ex4 {
+  width: 0;
+  height: 0;
+  /* background-color: #eee; */
+  border-style: solid;
+  border-width: 20px;
+  border-color: transparent transparent pink transparent;
+}
+
+.ex5 {
+  width: 0;
+  height: 0;
+  /* background-color: #eee; */
+  border-style: solid;
+  border-width: 0 30px 20px 10px;
+  border-color: transparent transparent pink transparent;
+  transform: skew(15deg, 30deg); /* x方向に15度、y方向に30度傾ける */
+}
+
+.balloon1-1 {
+  width: 200px;
+  height: 200px;
+  background-color: #eee;
+  border-radius: 4px;
+  position: relative;
+}
+
+.balloon1-1:before {
+  width: 0;
+  height: 0;
+  content: "";
+  border-style: solid;
+  border-width: 20px 20px 0 20px;
+  border-color: #eee transparent transparent transparent;
+  position: absolute;
+  right: 10px;
+  bottom: -20px;
+}
+
+.balloon1-2 {
+  width: 200px;
+  height: 200px;
+  background-color: #eee;
+  border-radius: 4px;
+  position: relative;
+}
+
+.balloon1-2:before {
+  width: 0;
+  height: 0;
+  content: "";
+  border-style: solid;
+  border-width: 15px 20px 10px 0;
+  border-color: #eee transparent transparent transparent;
+  position: absolute;
+  right: 20px;
+  bottom: -25px;
+}
+
+.balloon2-1 {
+  width: 200px;
+  height: 200px;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  position: relative;
+}
+
+.balloon2-1:before {
+  width: 0;
+  height: 0;
+  content: "";
+  border-style: solid;
+  border-width: 20px 20px 0 20px;
+  border-color: #eee transparent transparent transparent;
+  position: absolute;
+  right: 10px;
+  bottom: -20px;
+}
+
+.balloon2-1:after {
+  width: 0;
+  height: 0;
+  content: "";
+  border-style: solid;
+  border-width: 20px 20px 0 20px;
+  border-color: #fff transparent transparent transparent;
+  position: absolute;
+  right: 10px;
+  bottom: -19px;
+}
+
+.balloon2-2 {
+  width: 200px;
+  height: 200px;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  position: relative;
+}
+
+.balloon2-2:before {
+  width: 0;
+  height: 0;
+  content: "";
+  border-style: solid;
+  border-width: 15px 20px 10px 0;
+  border-color: #eee transparent transparent transparent;
+  position: absolute;
+  right: 20px;
+  bottom: -25px;
+}
+
+.balloon2-2:after {
+  width: 0;
+  height: 0;
+  content: "";
+  border-style: solid;
+  border-width: 15px 19px 10px 0;
+  border-color: #fff transparent transparent transparent;
+  position: absolute;
+  right: 20px;
+  bottom: -24px;
+}

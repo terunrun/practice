@@ -1,0 +1,112 @@
+@charset "UTF-8";
+body {
+  color: #333;
+  font-family: Verdana, sans-serif;
+  margin: 0;
+}
+
+header {
+  /* background-color: pink; */
+  text-align: right;
+  padding: 10px;
+  background-image: url("../img/header.png");
+  background-size: cover; /* 縦横比を保持したまま画像を合わせる */
+  background-position: center; /* 中心を起点にブラウザ幅に合わせて伸縮させる(50% 50%と同値) */
+  height: 240px;
+  margin-bottom: 20px;
+}
+
+header ul {
+  margin: 0;
+  list-style: none;
+  padding-left: 0;
+}
+
+header li {
+  display: inline-block; /* 要素の配置に関するプロパティ */
+  font-size: 12px;
+  padding: 4px 8px;
+}
+
+header li > a { /* header内のli直下のaに対して設定 */
+  text-decoration: none; /* テキストの装飾を指定するプロパティ */
+  color: inherit; /* aタグは親要素の指定を引き継がないので、強制引継ぎを指定 */
+}
+
+header li > a:hover {
+  color: royablue;
+}
+
+.current {
+  border-bottom: 4px solid royalblue;
+}
+
+section {
+  text-align: center; /* divに対しては無効 */
+}
+
+section h1 {
+  font-weight: normal;
+  margin-bottom: 8px;
+}
+
+section p {
+  margin-top: 0; /* 隣接する要素の上下マージンは大きい方が適用される（marginの相殺） */
+  font-size: 14px;
+}
+
+.icon {
+  width: 140px;
+  height: 140px;
+  /* border-radius: 70px; 幅140pxに対して70pxを指定すれば円になる */
+  border-radius: 50%;
+  /* border-width: 5px;
+  border-style: solid;
+  border-color: white; */
+  border: 5px solid white;
+  box-shadow: 0 0 5px gray; /* x y blur(ぼかし) color */
+}
+
+.works {
+  width: 400px;
+  margin: 60px auto; /* autoを左右に指定することで左右に余った余白を割り振る */
+  border-bottom: 1px solid gray;
+}
+
+.works h1, .works p {
+  text-align: left;
+}
+
+.works > section {
+  margin-bottom: 40px;
+}
+
+footer {
+  width: 400px;
+  margin: 0 auto 60px; /* 上に０、左右にauto、下に60px */
+}
+
+footer ul {
+  margin: 0;
+  list-style: none;
+  padding-left: 0;
+  float: left;
+}
+
+footer li {
+  display: inline-block; /* 要素の配置に関するプロパティ */
+}
+
+footer li > a { /* header内のli直下のaに対して設定 */
+  color: inherit; /* aタグは親要素の指定を引き継がないので、強制引継ぎを指定 */
+}
+
+footer li > a:hover {
+  opacity: 0.6;
+}
+
+footer p {
+  color: lightgray;
+  font-size: 14ps;
+  text-align: right;
+}

@@ -1,0 +1,174 @@
+@charset "UTF-8";
+
+body {
+  margin: 0;
+  font-size: 16px;
+  font-family: Verdana, sans-serif;
+  color: #333;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 60px 0;
+  width: 820px;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #fff;
+  color: orange;
+  text-align: center;
+  text-decoration: none;
+  padding: 8px 10px;
+  border-radius: 5px;
+  opacity: 0.8;
+}
+
+.btn:hover {
+  opacity: 1.0;
+  transition: 0.8s;
+  cursor: pointer;
+}
+
+.background {
+  color: #fff;
+  background-image: url("../img/3.jpg");
+  background-position: center;
+  background-size: cover;
+  margin-top: 0;
+}
+
+.section-title {
+  text-align: center;
+  font-weight: normal;
+  font-size: 24px;
+  margin-bottom: 60px;
+  margin-top: 0;
+}
+
+.section-title::after {
+  content: attr(data-subtitle);
+  display: block;
+  font-size: 16px;
+  color: gray;
+  padding-top: 5px;
+}
+
+
+/* header */
+
+header h1 {
+  font-weight: normal;
+  margin-top: 0;
+  font-size: 36px;
+  margin-bottom: 8px;
+}
+
+header p {
+  margin-top: 0;
+  margin-bottom: 50px;
+}
+
+header .container {
+  width: 820px;
+  margin: 0 auto;
+  padding: 60px 0;
+  position: relative;
+}
+
+header img {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+/* features */
+
+.feature {
+   overflow: hidden;
+}
+
+.feature:not(:last-child) {
+  margin-bottom: 60px;
+}
+
+.feature h1 {
+  font-weight: normal;
+  font-size: 18px;
+}
+
+.feature .desc {
+  /* containerが820px,imgが420pxで余り400px,余白を加味して360px */
+   width: 360px;
+}
+
+/* featureの奇数番目の中のdescクラスは右側に表示 */
+.feature:nth-of-type(odd) .desc {
+  float: right;
+  padding-left: 40px;
+}
+
+.feature:nth-of-type(even) .desc {
+  /* featureの偶数番目の中のdescクラスは←側に表示 */
+  float: left;
+  padding-right: 40px;
+}
+
+
+/* voices */
+.voices {
+  background-color: lightgray;
+  overflow: hidden;
+  padding-bottom: 60px;
+}
+
+.voices .section-title {
+  margin-bottom: 95px;
+}
+
+.voices .flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.voice {
+  width: 250px;
+  background-color: #fff;
+  position: relative;
+  box-sizing: border-box;
+  padding: 60px 20px 40px;
+}
+
+.voice img {
+  border-radius: 50%;
+  border: 10px solid #fff;
+  position: absolute; /* 左右を0にしてmarginの左右をautoにすれば親要素の中央に配置される */
+  top: -55px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.voice h1 {
+  text-align: center;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+
+/* call-to-action */
+.call-to-action {
+  text-align: center;
+}
+
+.call-to-action .section-title {
+  margin-bottom: 15px;
+}
+
+
+/* footer */
+footer {
+  padding: 40px 0;
+  text-align: center;
+  color: #aaa;
+}

@@ -1,0 +1,204 @@
+@charset "UTF-8";
+table {
+  border: 1px solid black;
+}
+
+th {
+  border: 1px solid black;
+}
+
+td {
+  border: 1px solid black;
+}
+
+.va {
+  font-size: 24px;
+  /* line-height: 24px;
+  line-height: 1em /* font-sizeの1倍 */
+  line-height: 5; /* font-sizeの1倍、子要素にも継承される */;
+  color: rgb(255, 187, 0, 0.8);
+  color: #ffbb00; /* 16進数表記 1-2：r 3-4：g 5-6：b */
+  color: #fb0; /* ffのように2文字同じの場合は1文字表記可能 */
+  background-color: hsl(198, 50%, 50%, 0.5); /* 色相、彩度、明度、透明度 */
+}
+
+.va > img {
+  vertical-align: -20px; /* boxの中心線（baseline）を基準に上下位置を調整（baseline、top、bottom、上下px） */
+}
+
+ol {
+  list-style-type: lower-alpha;
+}
+
+ul {
+  /* list-style-type: circle;
+  list-style-image: url(../img/blog.png);
+  list-style-position: inside; */
+  list-style: circle inside url(../img/blog.png); /* 一括指定　これを使うとここで指定しなかったプロパティはlist-style用のデフォルト値となる */
+}
+
+.box1 {
+  background-color: red;
+  width: 200px;
+  height: 200px;
+  margin: 20px auto 20px;
+}
+
+.box2 {
+  background-color: blue;
+  width: 50%; /* 親要素に対する割合 */
+  height: 50%; /* 親要素に対する割合 */
+  overflow: hidden; /* はみ出た要素に対する扱い scrollなどがある */
+  border: 2px solid black;
+  border-radius: 10px; /* 半径10pxの縁で角を丸める */
+  padding: 20px 0 0 40px;
+}
+
+.box3 {
+  background-color: green;
+  display: inline-block; /* 要素のボックスタイプを指定 noneで非表示 */
+  width: 100px;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+}
+
+.box4 {
+  background-color: red;
+  position: relative;
+  border: 2px solid pink;
+  box-sizing: border-box; /* border、paddingをwidth・heightに含めるか */
+  box-shadow: 10px 5px 3px 10px rgba(0, 0, 0, 0.3); /* x方向、y方向、ぼかし、拡大、色 */
+  margin-bottom: 10px;
+}
+
+.box5 {
+  background-color: green;
+  position: relative; /* staticでそのまま表示 */
+  top: 30px; /* staticの位置から見た位置を指定 */
+  left: 30px;
+  text-shadow: 10px 5px 3px rgba(0, 0, 0, 0.3); /* x方向、y方向、ぼかし、色 */
+}
+
+.box6 {
+  background-color: blue;
+  /* position: fixed; */
+  /* top: 30px; /* windowの左上から見た位置を指定　スクロールしても位置が不変 */
+  /* left: 30px; */
+}
+
+.mini {
+  width: 30px;
+  height: 30px;
+  background-color: pink;
+  border: 1px solid black;
+}
+
+.box-a {
+  position: absolute; /* 親要素のpositionからみた位置を指定 */
+  top: 0;
+  left: 0;
+  z-index: 5; /* positonがstatic以外の場合に指定可能 */
+}
+
+.box-b {
+  position: absolute; /* 親要素のpositionからみた位置を指定 */
+  top: 10px;
+  left: 10px;
+  z-index: 3;
+}
+
+.box-c {
+  position: absolute; /* 親要素のpositionからみた位置を指定 */
+  top: 20px;
+  left: 20px;
+  z-index: 4;
+}
+
+a[href="www"] { /* 属性セレクタ　完全一致 */
+  font-weight: bold;
+}
+
+a[href^="http"] { /* 属性セレクタ　前方一致 */
+  font-weight: bold;
+}
+
+a[href$="com"] { /* 属性セレクタ　後方一致 */
+  text-decoration: none;
+}
+
+a[href*=":/"] { /* 属性セレクタ　部分一致 */
+  background-color: pink;
+}
+
+.giji h1::before { /* 前方疑似要素 */
+  content: "-";
+}
+
+.giji h1::after { /* 後方疑似要素 */
+  content: attr(data-subtitle); /* h1タグのdata-subtitle属性を取得 */
+}
+
+#gijiclass {
+  width: 100px;
+  background-color: skyblue;
+  text-align: center;
+  padding: 4px 8px;
+  margin:10px auto;
+}
+
+#gijiclass:hover { /* 疑似クラスを設定 hover：マウスが乗ったとき */
+  opacity: 0.6;
+  cursor: grab; /* マウスカーソルをグローブにする */
+}
+
+#nthchild > p:not(nth-child(3n)) { /* 3の倍数がpタグの場合に適用する */
+  background-color: pink;
+}
+
+#nthchild > p:nth-child(even) { /* 偶数がpタグの場合に適用する */
+  background-color: gray;
+}
+
+#nthchild > p:first-child { /* 初めの要素がpタグの場合に適用する（lastなら逆） */
+  background-color: green;
+}
+
+#nthoftype > p:nth-child(3) {
+  background-color: pink; /* 3番目がpタグでないため適用されない */
+}
+
+#nthoftype > p:nth-of-type(3n) { /* 3番目のpタグに適用される 使い方はnth-childと同じ */
+  background-color: pink;
+}
+
+h1#syousaido_h1.syousaido_h1 { /* id:1 class,属性:1 要素:1 */
+  color: yellow;
+}
+
+section > #syousaido_h1.syousaido_h1 { /* id:1 class,属性:1 要素:1 後から記載されているのでこれが適用される*/
+  color: red;
+}
+
+section#syosaido > h1 { /* id:1 class,属性:0 要素:2 */
+  color: green !important; /* 詳細度が低くても!importantをつけると適用される */
+}
+
+#float > h1,
+#float > h2,
+#float > p {
+  border: 1px solid silver;
+}
+
+#float > p > img {
+  width: 90px;
+  height: 90px;
+  float: right;
+}
+
+#float > h2 {
+  clear: right; /* clearで直前のfloatの影響をかき消す(直前がrightならrightを指定)
+   */
+}
